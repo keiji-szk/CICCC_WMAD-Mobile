@@ -1,0 +1,18 @@
+PODS:
+  - ImageSlideshow (1.9.2):
+    - ImageSlideshow/Core (= 1.9.2)
+  - ImageSlideshow/Core (1.9.2)
+
+DEPENDENCIES:
+  - ImageSlideshow
+
+SPEC REPOS:
+  trunk:
+    - ImageSlideshow
+
+SPEC CHECKSUMS:
+  ImageSlideshow: be305b54eaf2b2cfc7a7141c7c734605d44dc07d
+
+PODFILE CHECKSUM: 43f2d57b788560b26779deeed4d160f416bc78ba
+
+COCOAPODS: 1.11.3

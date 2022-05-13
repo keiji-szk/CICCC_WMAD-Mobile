@@ -1,0 +1,643 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VpQ-x5-HAs">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Mad_Scientists_House" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fz0-wR-4wJ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="674"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="front_door" translatesAutoresizingMaskIntoConstraints="NO" id="c42-vI-ffU">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="643"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyp-Q6-xQp">
+                                        <rect key="frame" x="0.0" y="643" width="414" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Coat room"/>
+                                        <connections>
+                                            <segue destination="bEb-hQ-5wN" kind="show" id="2d4-bY-yyP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="c42-vI-ffU" firstAttribute="top" secondItem="fz0-wR-4wJ" secondAttribute="top" id="t5O-z1-wN5"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fz0-wR-4wJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Jxl-Fz-MSx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fz0-wR-4wJ" secondAttribute="bottom" constant="100" id="Jxp-e7-7Yz"/>
+                            <constraint firstItem="fz0-wR-4wJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="MmS-2S-SCi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fz0-wR-4wJ" secondAttribute="trailing" id="QLY-j3-VWI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="x17-fI-ELQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="939.13043478260875" y="65.625"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cOm-eP-YBy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VpQ-x5-HAs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jyM-3O-19P">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="fj9-4k-fkD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uQe-yW-oAz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="65.625"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="hVR-tR-MmY">
+            <objects>
+                <viewController id="bEb-hQ-5wN" customClass="ViewController" customModule="Mad_Scientists_House" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="i9u-u5-TVP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sFR-yO-bLV">
+                                <rect key="frame" x="0.0" y="88" width="414" height="674"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="coat_room" translatesAutoresizingMaskIntoConstraints="NO" id="3LD-xV-VYJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="551"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZu-u8-9Ya">
+                                        <rect key="frame" x="0.0" y="561" width="414" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Library"/>
+                                        <connections>
+                                            <segue destination="iCN-eU-UNR" kind="show" id="iUV-bl-FKf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7uP-t1-ckU">
+                                        <rect key="frame" x="0.0" y="602" width="414" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Dining room"/>
+                                        <connections>
+                                            <segue destination="yIO-F3-CDY" kind="show" id="9zm-Ga-cFz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rJ1-pH-DQV">
+                                        <rect key="frame" x="0.0" y="643" width="414" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Stairs up"/>
+                                        <connections>
+                                            <segue destination="JQH-xm-47R" kind="show" id="4xf-ch-LvG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="3LD-xV-VYJ" firstAttribute="top" secondItem="sFR-yO-bLV" secondAttribute="top" id="5fb-bm-VWv"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jEb-ll-DIr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jEb-ll-DIr" firstAttribute="bottom" secondItem="sFR-yO-bLV" secondAttribute="bottom" constant="100" id="N5P-6r-blg"/>
+                            <constraint firstItem="sFR-yO-bLV" firstAttribute="top" secondItem="jEb-ll-DIr" secondAttribute="top" id="V4A-qt-TSL"/>
+                            <constraint firstItem="sFR-yO-bLV" firstAttribute="leading" secondItem="jEb-ll-DIr" secondAttribute="leading" id="kr3-pr-mEY"/>
+                            <constraint firstItem="jEb-ll-DIr" firstAttribute="trailing" secondItem="sFR-yO-bLV" secondAttribute="trailing" id="osI-vB-BPV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="8kb-2d-GNu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5dq-D6-XCI" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1809" y="66"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="PYC-8c-qh0">
+            <objects>
+                <viewController id="iCN-eU-UNR" customClass="ViewController" customModule="Mad_Scientists_House" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xcU-fE-yNA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cKS-PB-d2V">
+                                <rect key="frame" x="0.0" y="88" width="414" height="674"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="library" translatesAutoresizingMaskIntoConstraints="NO" id="39f-PS-84l">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="633"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLI-hU-mJA">
+                                        <rect key="frame" x="0.0" y="643" width="414" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Secret passage"/>
+                                        <connections>
+                                            <segue destination="Ghi-Aq-05I" kind="show" id="C8L-eF-6vW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="39f-PS-84l" firstAttribute="top" secondItem="cKS-PB-d2V" secondAttribute="top" id="rtc-6H-bUe"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="c2V-0H-Jpe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="c2V-0H-Jpe" firstAttribute="bottom" secondItem="cKS-PB-d2V" secondAttribute="bottom" constant="100" id="2Zn-2o-exE"/>
+                            <constraint firstItem="cKS-PB-d2V" firstAttribute="top" secondItem="c2V-0H-Jpe" secondAttribute="top" id="5kR-32-1du"/>
+                            <constraint firstItem="c2V-0H-Jpe" firstAttribute="trailing" secondItem="cKS-PB-d2V" secondAttribute="trailing" id="q3l-QJ-lr7"/>
+                            <constraint firstItem="cKS-PB-d2V" firstAttribute="leading" secondItem="c2V-0H-Jpe" secondAttribute="leading" id="wmt-Uw-m7l"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="qee-jL-IAj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TOf-vs-JO3" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2574" y="66"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="L0R-Xp-0kQ">
+            <objects>
+                <viewController id="Ghi-Aq-05I" customClass="ViewController" customModule="Mad_Scientists_House" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7b2-fl-WPI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ddD-9x-EOD">
+                                <rect key="frame" x="0.0" y="88" width="414" height="674"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="secret_passage" translatesAutoresizingMaskIntoConstraints="NO" id="skF-46-yhD">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="551"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V9n-Qv-5ps">
+                                        <rect key="frame" x="0.0" y="561" width="414" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Dungeon"/>
+                                        <connections>
+                                            <segue destination="6Cn-kz-V94" kind="show" id="IBi-JB-rkZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlT-8L-scN">
+                                        <rect key="frame" x="0.0" y="602" width="414" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Labratory"/>
+                                        <connections>
+                                            <segue destination="u0h-8g-XgW" kind="show" id="ESl-qu-PI8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YZj-wX-DOD">
+                                        <rect key="frame" x="0.0" y="643" width="414" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Mysterious lake"/>
+                                        <connections>
+                                            <segue destination="eX1-VI-u0r" kind="show" id="lok-ag-LZs"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="skF-46-yhD" firstAttribute="top" secondItem="ddD-9x-EOD" secondAttribute="top" id="eh4-85-lQs"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nFY-CQ-Pwc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ddD-9x-EOD" firstAttribute="top" secondItem="nFY-CQ-Pwc" secondAttribute="top" id="8gB-qa-jZd"/>
+                            <constraint firstItem="ddD-9x-EOD" firstAttribute="leading" secondItem="nFY-CQ-Pwc" secondAttribute="leading" id="OBc-xd-PUF"/>
+                            <constraint firstItem="nFY-CQ-Pwc" firstAttribute="trailing" secondItem="ddD-9x-EOD" secondAttribute="trailing" id="SYG-Vn-Um5"/>
+                            <constraint firstItem="nFY-CQ-Pwc" firstAttribute="bottom" secondItem="ddD-9x-EOD" secondAttribute="bottom" constant="100" id="ztA-ON-kGa"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="HrM-BO-Qn3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5aY-O6-Kf5" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3265" y="66"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tBo-BF-9SL">
+            <objects>
+                <viewController id="yIO-F3-CDY" customClass="ViewController" customModule="Mad_Scientists_House" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="z9H-OU-O2O">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="d9J-Zc-ohX">
+                                <rect key="frame" x="0.0" y="88" width="414" height="674"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="dining_room" translatesAutoresizingMaskIntoConstraints="NO" id="9vX-gP-Ing">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="633"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Xg-6C-LVT">
+                                        <rect key="frame" x="0.0" y="643" width="414" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Back poach"/>
+                                        <connections>
+                                            <segue destination="nRT-tb-sZA" kind="show" id="zWS-gi-D6f"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="9vX-gP-Ing" firstAttribute="top" secondItem="d9J-Zc-ohX" secondAttribute="top" id="lUn-yV-3xv"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QCQ-b5-GDv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="d9J-Zc-ohX" firstAttribute="top" secondItem="QCQ-b5-GDv" secondAttribute="top" id="Au4-DZ-Z1U"/>
+                            <constraint firstItem="QCQ-b5-GDv" firstAttribute="bottom" secondItem="d9J-Zc-ohX" secondAttribute="bottom" constant="100" id="TeO-zF-L03"/>
+                            <constraint firstItem="QCQ-b5-GDv" firstAttribute="trailing" secondItem="d9J-Zc-ohX" secondAttribute="trailing" id="bOq-qi-asA"/>
+                            <constraint firstItem="d9J-Zc-ohX" firstAttribute="leading" secondItem="QCQ-b5-GDv" secondAttribute="leading" id="wZt-Oy-4ZF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Xqf-er-Cwo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jwv-mg-qBf" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2574" y="788"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="S0g-j1-tiI">
+            <objects>
+                <viewController id="nRT-tb-sZA" customClass="ViewController" customModule="Mad_Scientists_House" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fzO-Nc-aSE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XXE-al-5Ep">
+                                <rect key="frame" x="0.0" y="88" width="414" height="674"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="back_porch" translatesAutoresizingMaskIntoConstraints="NO" id="Mib-mB-Z1j">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="674"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Mib-mB-Z1j" firstAttribute="top" secondItem="XXE-al-5Ep" secondAttribute="top" id="B2S-WY-DGf"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FJg-aN-sZ1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XXE-al-5Ep" firstAttribute="top" secondItem="FJg-aN-sZ1" secondAttribute="top" id="4Ce-va-vWK"/>
+                            <constraint firstItem="FJg-aN-sZ1" firstAttribute="trailing" secondItem="XXE-al-5Ep" secondAttribute="trailing" id="J4b-cS-3mh"/>
+                            <constraint firstItem="FJg-aN-sZ1" firstAttribute="bottom" secondItem="XXE-al-5Ep" secondAttribute="bottom" constant="100" id="Pz6-Rm-bwi"/>
+                            <constraint firstItem="XXE-al-5Ep" firstAttribute="leading" secondItem="FJg-aN-sZ1" secondAttribute="leading" id="dF9-es-k0a"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="sGa-rt-je4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="huU-Eo-cdC" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3264" y="795"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="rmk-pY-aYx">
+            <objects>
+                <viewController id="JQH-xm-47R" customClass="ViewController" customModule="Mad_Scientists_House" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9IM-X4-8hf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Lp0-at-ePW">
+                                <rect key="frame" x="0.0" y="88" width="414" height="674"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="stairs_up" translatesAutoresizingMaskIntoConstraints="NO" id="8Ia-1Y-sXS">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="592"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ho0-8I-Mqk">
+                                        <rect key="frame" x="0.0" y="602" width="414" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Bedroom"/>
+                                        <connections>
+                                            <segue destination="jk2-Hj-wbB" kind="show" id="fg3-3c-y6l"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wp-Iz-dFW">
+                                        <rect key="frame" x="0.0" y="643" width="414" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Bathroom"/>
+                                        <connections>
+                                            <segue destination="J3N-tp-el7" kind="show" id="N1v-QM-9rh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="8Ia-1Y-sXS" firstAttribute="top" secondItem="Lp0-at-ePW" secondAttribute="top" id="eXj-oR-iLO"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="YbQ-4u-4cU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YbQ-4u-4cU" firstAttribute="bottom" secondItem="Lp0-at-ePW" secondAttribute="bottom" constant="100" id="DTk-n9-v7d"/>
+                            <constraint firstItem="Lp0-at-ePW" firstAttribute="top" secondItem="YbQ-4u-4cU" secondAttribute="top" id="PtS-nx-Yhq"/>
+                            <constraint firstItem="Lp0-at-ePW" firstAttribute="leading" secondItem="YbQ-4u-4cU" secondAttribute="leading" id="iJN-4M-okW"/>
+                            <constraint firstItem="YbQ-4u-4cU" firstAttribute="trailing" secondItem="Lp0-at-ePW" secondAttribute="trailing" id="qoX-Kg-JWg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="USl-mx-y6x"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wux-KC-hHa" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1809" y="795"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="HyR-0E-oHj">
+            <objects>
+                <viewController id="jk2-Hj-wbB" customClass="ViewController" customModule="Mad_Scientists_House" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TNK-V0-7YA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Xqc-wu-CEK">
+                                <rect key="frame" x="0.0" y="88" width="414" height="674"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="bedroom" translatesAutoresizingMaskIntoConstraints="NO" id="zL4-Ip-coY">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="674"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="zL4-Ip-coY" firstAttribute="top" secondItem="Xqc-wu-CEK" secondAttribute="top" id="7XZ-3g-DEj"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="M2i-0m-HbK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="M2i-0m-HbK" firstAttribute="bottom" secondItem="Xqc-wu-CEK" secondAttribute="bottom" constant="100" id="1Rl-28-ZBa"/>
+                            <constraint firstItem="M2i-0m-HbK" firstAttribute="trailing" secondItem="Xqc-wu-CEK" secondAttribute="trailing" id="CTB-gY-jTD"/>
+                            <constraint firstItem="Xqc-wu-CEK" firstAttribute="leading" secondItem="M2i-0m-HbK" secondAttribute="leading" id="HcG-Vp-7MU"/>
+                            <constraint firstItem="Xqc-wu-CEK" firstAttribute="top" secondItem="M2i-0m-HbK" secondAttribute="top" id="wzq-hN-liB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="RLD-3f-3MD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CD0-DA-Mxr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1809" y="1526"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="J9L-aN-lgJ">
+            <objects>
+                <viewController id="J3N-tp-el7" customClass="ViewController" customModule="Mad_Scientists_House" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KDG-79-EuB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ytB-6f-iwe">
+                                <rect key="frame" x="0.0" y="88" width="414" height="674"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="bathroom" translatesAutoresizingMaskIntoConstraints="NO" id="6lP-kX-7ts">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="674"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="6lP-kX-7ts" firstAttribute="top" secondItem="ytB-6f-iwe" secondAttribute="top" id="7ed-mK-mmr"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3pR-hj-lHK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ytB-6f-iwe" firstAttribute="leading" secondItem="3pR-hj-lHK" secondAttribute="leading" id="4BE-NM-EpE"/>
+                            <constraint firstItem="ytB-6f-iwe" firstAttribute="top" secondItem="3pR-hj-lHK" secondAttribute="top" id="4dH-EX-Pdl"/>
+                            <constraint firstItem="3pR-hj-lHK" firstAttribute="bottom" secondItem="ytB-6f-iwe" secondAttribute="bottom" constant="100" id="VKT-cP-EVf"/>
+                            <constraint firstItem="3pR-hj-lHK" firstAttribute="trailing" secondItem="ytB-6f-iwe" secondAttribute="trailing" id="lcy-aQ-jVj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="fvq-52-DDW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GMD-vA-KOe" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2532" y="1511"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="sH5-dt-SkN">
+            <objects>
+                <viewController id="6Cn-kz-V94" customClass="ViewController" customModule="Mad_Scientists_House" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qNH-aI-Qg9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZXE-yr-haI">
+                                <rect key="frame" x="0.0" y="88" width="414" height="674"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="dungeon" translatesAutoresizingMaskIntoConstraints="NO" id="VlA-Wj-3vX">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="674"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="VlA-Wj-3vX" firstAttribute="top" secondItem="ZXE-yr-haI" secondAttribute="top" id="G3r-Ws-hxg"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZkA-ql-CFl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZkA-ql-CFl" firstAttribute="trailing" secondItem="ZXE-yr-haI" secondAttribute="trailing" id="09o-Va-sl2"/>
+                            <constraint firstItem="ZXE-yr-haI" firstAttribute="top" secondItem="ZkA-ql-CFl" secondAttribute="top" id="d83-6C-UGV"/>
+                            <constraint firstItem="ZkA-ql-CFl" firstAttribute="bottom" secondItem="ZXE-yr-haI" secondAttribute="bottom" constant="100" id="fkD-vR-WfA"/>
+                            <constraint firstItem="ZXE-yr-haI" firstAttribute="leading" secondItem="ZkA-ql-CFl" secondAttribute="leading" id="orv-0e-GeJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="YTY-vu-TxB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JxF-SN-jkK" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4736" y="-128"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="r7n-22-OCd">
+            <objects>
+                <viewController id="u0h-8g-XgW" customClass="ViewController" customModule="Mad_Scientists_House" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="an9-XV-krF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bH7-9J-0ld">
+                                <rect key="frame" x="0.0" y="88" width="414" height="674"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="labratory" translatesAutoresizingMaskIntoConstraints="NO" id="Z7D-bN-p8c">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="633"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92J-oh-7xh">
+                                        <rect key="frame" x="0.0" y="643" width="414" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Generator"/>
+                                        <connections>
+                                            <segue destination="V00-6p-Bmm" kind="show" id="omG-1l-box"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Z7D-bN-p8c" firstAttribute="top" secondItem="bH7-9J-0ld" secondAttribute="top" id="iDL-wf-fmP"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ggl-kg-S3Q"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ggl-kg-S3Q" firstAttribute="trailing" secondItem="bH7-9J-0ld" secondAttribute="trailing" id="JTP-hs-nCv"/>
+                            <constraint firstItem="bH7-9J-0ld" firstAttribute="leading" secondItem="Ggl-kg-S3Q" secondAttribute="leading" id="R1Q-y3-ZIk"/>
+                            <constraint firstItem="Ggl-kg-S3Q" firstAttribute="bottom" secondItem="bH7-9J-0ld" secondAttribute="bottom" constant="100" id="cqM-Jr-ugT"/>
+                            <constraint firstItem="bH7-9J-0ld" firstAttribute="top" secondItem="Ggl-kg-S3Q" secondAttribute="top" id="qib-Ze-ALT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="PFd-IQ-xDp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MSm-He-YFb" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4393" y="426"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4EP-ye-vSW">
+            <objects>
+                <viewController id="eX1-VI-u0r" customClass="ViewController" customModule="Mad_Scientists_House" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="edx-Ro-T4t">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rul-kW-MS3">
+                                <rect key="frame" x="0.0" y="88" width="414" height="674"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="mysterious_lake" translatesAutoresizingMaskIntoConstraints="NO" id="1HZ-8B-kfT">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="633"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tyM-qq-Cf5">
+                                        <rect key="frame" x="0.0" y="643" width="414" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Cursed chalise"/>
+                                        <connections>
+                                            <segue destination="Ymi-MI-pWc" kind="show" id="eZ2-mr-ojs"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="1HZ-8B-kfT" firstAttribute="top" secondItem="rul-kW-MS3" secondAttribute="top" id="2J5-RT-G5L"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gx7-91-aMW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gx7-91-aMW" firstAttribute="bottom" secondItem="rul-kW-MS3" secondAttribute="bottom" constant="100" id="8Ig-WE-pYh"/>
+                            <constraint firstItem="rul-kW-MS3" firstAttribute="top" secondItem="gx7-91-aMW" secondAttribute="top" id="Aaw-Xx-x74"/>
+                            <constraint firstItem="gx7-91-aMW" firstAttribute="trailing" secondItem="rul-kW-MS3" secondAttribute="trailing" id="D4i-J7-OGb"/>
+                            <constraint firstItem="rul-kW-MS3" firstAttribute="leading" secondItem="gx7-91-aMW" secondAttribute="leading" id="DUh-Cz-8HM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="p4L-8N-y0g"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cz8-5z-paT" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4099" y="773"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="waH-NY-EFb">
+            <objects>
+                <viewController id="V00-6p-Bmm" customClass="ViewController" customModule="Mad_Scientists_House" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GPD-Cj-1oj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cjY-g6-ZgU">
+                                <rect key="frame" x="0.0" y="88" width="414" height="674"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="generator" translatesAutoresizingMaskIntoConstraints="NO" id="fus-rP-8DR">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="674"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="fus-rP-8DR" firstAttribute="top" secondItem="cjY-g6-ZgU" secondAttribute="top" id="fL2-SH-Tch"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TFx-Zy-4ah"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TFx-Zy-4ah" firstAttribute="bottom" secondItem="cjY-g6-ZgU" secondAttribute="bottom" constant="100" id="Gk5-3r-vsS"/>
+                            <constraint firstItem="TFx-Zy-4ah" firstAttribute="trailing" secondItem="cjY-g6-ZgU" secondAttribute="trailing" id="WGs-gd-gb4"/>
+                            <constraint firstItem="cjY-g6-ZgU" firstAttribute="top" secondItem="TFx-Zy-4ah" secondAttribute="top" id="dVb-L8-fjK"/>
+                            <constraint firstItem="cjY-g6-ZgU" firstAttribute="leading" secondItem="TFx-Zy-4ah" secondAttribute="leading" id="zfh-Y5-WXc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="vkD-DB-6tO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wd9-su-IEV" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5148" y="451"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="YJM-V7-unq">
+            <objects>
+                <viewController id="Ymi-MI-pWc" customClass="ViewController" customModule="Mad_Scientists_House" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BGY-1o-kRk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="st5-a3-lJn">
+                                <rect key="frame" x="0.0" y="88" width="414" height="674"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="cursed_chalice" translatesAutoresizingMaskIntoConstraints="NO" id="9rx-m9-vbY">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="674"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="9rx-m9-vbY" firstAttribute="top" secondItem="st5-a3-lJn" secondAttribute="top" id="Tm4-s4-ZSB"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TjQ-JC-R9J"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TjQ-JC-R9J" firstAttribute="bottom" secondItem="st5-a3-lJn" secondAttribute="bottom" constant="100" id="ar6-4A-QSp"/>
+                            <constraint firstItem="st5-a3-lJn" firstAttribute="top" secondItem="TjQ-JC-R9J" secondAttribute="top" id="cRI-wJ-Rb6"/>
+                            <constraint firstItem="TjQ-JC-R9J" firstAttribute="trailing" secondItem="st5-a3-lJn" secondAttribute="trailing" id="fU0-DO-SDW"/>
+                            <constraint firstItem="st5-a3-lJn" firstAttribute="leading" secondItem="TjQ-JC-R9J" secondAttribute="leading" id="mZm-OI-ICB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="BL1-Gc-ACt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lTp-vS-BuZ" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4868" y="773"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back_porch" width="1024" height="1024"/>
+        <image name="bathroom" width="1024" height="1024"/>
+        <image name="bedroom" width="1024" height="1024"/>
+        <image name="coat_room" width="1024" height="1024"/>
+        <image name="cursed_chalice" width="1024" height="1024"/>
+        <image name="dining_room" width="1024" height="1024"/>
+        <image name="dungeon" width="1024" height="1024"/>
+        <image name="front_door" width="1024" height="1024"/>
+        <image name="generator" width="1024" height="1024"/>
+        <image name="labratory" width="1024" height="1024"/>
+        <image name="library" width="1024" height="1001"/>
+        <image name="mysterious_lake" width="1024" height="1024"/>
+        <image name="secret_passage" width="1024" height="1001"/>
+        <image name="stairs_up" width="1024" height="1001"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
