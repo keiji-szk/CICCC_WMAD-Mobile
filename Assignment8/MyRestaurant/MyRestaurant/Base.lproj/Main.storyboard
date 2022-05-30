@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main Collection View Controller-->
+        <!--My Restaurants-->
         <scene sceneID="hru-Gx-TT1">
             <objects>
                 <collectionViewController id="Qos-QJ-gtc" customClass="MainCollectionViewController" customModule="MyRestaurant" customModuleProvider="target" sceneMemberID="viewController">
@@ -37,7 +37,7 @@
                             <outlet property="delegate" destination="Qos-QJ-gtc" id="7iK-y7-wcS"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="0f6-xR-wFR"/>
+                    <navigationItem key="navigationItem" title="My Restaurants" id="0f6-xR-wFR"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vA2-8n-xPf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
