@@ -7,23 +7,13 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
 
 class LogHabitCollectionViewController: HabitCollectionViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
   }
   
-  override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
-    
-    let loggedHabit = LoggedHabit(userID: Settings.shared.currentUser.id, habitName: item.habit.name, timestamp: Date())
-    
-    LogHabitRequest(trackedEvent: loggedHabit).send { _ in }
-  }
 //
 //  override func createLayout() -> UICollectionViewCompositionalLayout {
 //      return UICollectionViewCompositionalLayout { (sectionIndex, environment) -> NSCollectionLayoutSection? in
@@ -62,25 +52,14 @@ class LogHabitCollectionViewController: HabitCollectionViewController {
 //          }
 //      }
 //  }
+  
+  override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
+    
+    let loggedHabit = LoggedHabit(userID: Settings.shared.currentUser.id, habitName: item.habit.name, timestamp: Date())
+    
+    LogHabitRequest(trackedEvent: loggedHabit).send { _ in }
+  }
 
-  
-  override func numberOfSections(in collectionView: UICollectionView) -> Int {
-    // #warning Incomplete implementation, return the number of sections
-    return 0
-  }
-  
-  
-  override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    // #warning Incomplete implementation, return the number of items
-    return 0
-  }
-  
-  override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-    // Configure the cell
-    
-    return cell
-  }
   
 }

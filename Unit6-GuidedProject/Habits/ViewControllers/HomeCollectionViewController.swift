@@ -92,6 +92,9 @@ class HomeCollectionViewController: UICollectionViewController {
     dataSource = createDataSource()
     collectionView.dataSource = dataSource
     collectionView.collectionViewLayout = createLayout()
+    for supplementaryView in SupplementaryView.allCases {
+      supplementaryView.register(on: collectionView)
+    }
   }
   
   var updateTimer: Timer?
@@ -192,17 +195,6 @@ class HomeCollectionViewController: UICollectionViewController {
     var itemsBySection = [ViewModel.Section.leaderboard: leaderboardItems]
     var followedUserItems = [ViewModel.Item]()
     
-    
-    func loggedHabitNames(for user: User) -> Set<String> {
-        var names = [String]()
-
-        if let stats = model.userStatistics.first(where: { $0.user == user }) {
-            names = stats.habitCounts.map { $0.habit.name }
-        }
-
-        return Set(names)
-    }
-    
     let currentUserLoggedHabits = loggedHabitNames(for: model.currentUser)
     let favoriteLoggedHabits = Set(model.favoriteHabits.map { $0.name }).intersection(currentUserLoggedHabits)
     
@@ -281,59 +273,121 @@ class HomeCollectionViewController: UICollectionViewController {
   }
   
   func createDataSource() -> DataSourceType {
-      let dataSource = DataSourceType(collectionView: collectionView) { (collectionView, indexPath, item) -> UICollectionViewCell? in
-          switch item {
-          case .leaderboardHabit(let name, let leadingUserRanking, let secondaryUserRanking):
-              let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LeaderboardHabit", for: indexPath) as! LeaderboardHabitCollectionViewCell
-              cell.habitNameLabel.text = name
-              cell.leaderLabel.text = leadingUserRanking
-              cell.secondaryLabel.text = secondaryUserRanking
-              return cell
-            
-          case .followedUser(let user, let message):
-              let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FollowedUser", for: indexPath) as! PrimarySecondaryTextCollectionViewCell
-              cell.primaryTextLabel.text = user.name
-              cell.secondaryTextLabel.text = message
-              return cell
-          }
+    let dataSource = DataSourceType(collectionView: collectionView) { (collectionView, indexPath, item) -> UICollectionViewCell? in
+      switch item {
+      case .leaderboardHabit(let name, let leadingUserRanking, let secondaryUserRanking):
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LeaderboardHabit", for: indexPath) as! LeaderboardHabitCollectionViewCell
+        cell.habitNameLabel.text = name
+        cell.leaderLabel.text = leadingUserRanking
+        cell.secondaryLabel.text = secondaryUserRanking
+        return cell
+        
+      case .followedUser(let user, let message):
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FollowedUser", for: indexPath) as! PrimarySecondaryTextCollectionViewCell
+        cell.primaryTextLabel.text = user.name
+        cell.secondaryTextLabel.text = message
+        return cell
       }
-
-      return dataSource
+    }
+    
+    dataSource.supplementaryViewProvider = { (collectionView, kind, indexPath) in
+      guard let elementKind = SupplementaryView(rawValue: kind) else { return nil }
+      
+      let view = collectionView.dequeueReusableSupplementaryView(ofKind: elementKind.viewKind, withReuseIdentifier: elementKind.reuseIdentifier, for: indexPath)
+      
+      switch elementKind {
+      case .leaderboardGroupBackground:
+        view.backgroundColor = UIColor(hue: 0.65, saturation: 0.1, brightness: 0.95, alpha: 1)
+        view.layer.cornerRadius = 12
+        return view
+      case .leaderboardSectionHeader:
+        let header = view as! NamedSectionHeaderView
+        header.nameLabel.text = "Leaderboard"
+        header.nameLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle)
+        header.alignLabelToTop()
+        return header
+      case .followedUsersSectionHeader:
+        let header = view as! NamedSectionHeaderView
+        header.nameLabel.text = "Following"
+        header.nameLabel.font = UIFont.preferredFont(forTextStyle: .title2)
+        header.alignLabelToYCenter()
+        return header
+      default:
+        return nil
+      }
+    }
+    
+    return dataSource
   }
   
   func createLayout() -> UICollectionViewCompositionalLayout {
-      let layout = UICollectionViewCompositionalLayout { (sectionIndex, environment) -> NSCollectionLayoutSection? in
-          switch self.dataSource.snapshot().sectionIdentifiers[sectionIndex] {
-          case .leaderboard:
-              let leaderboardItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.3))
-              let leaderboardItem = NSCollectionLayoutItem(layoutSize: leaderboardItemSize)
+    let layout = UICollectionViewCompositionalLayout { (sectionIndex, environment) -> NSCollectionLayoutSection? in
+      switch self.dataSource.snapshot().sectionIdentifiers[sectionIndex] {
+      case .leaderboard:
+        let leaderboardItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.3))
+        let leaderboardItem = NSCollectionLayoutItem(layoutSize: leaderboardItemSize)
+        
+        let verticalTrioSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.75), heightDimension: .fractionalWidth(0.75))
+        let leaderboardVerticalTrio = NSCollectionLayoutGroup.vertical(layoutSize: verticalTrioSize, subitem: leaderboardItem, count: 3)
+        
+        ////
+        let groupDecorationSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.77), heightDimension: .fractionalWidth(0.77))
+        let groupAnchor = NSCollectionLayoutAnchor(edges: .all, absoluteOffset: CGPoint(x: 0, y: 0))
+        let groupDecoration = NSCollectionLayoutSupplementaryItem(layoutSize: groupDecorationSize, elementKind: SupplementaryView.leaderboardGroupBackground.viewKind, containerAnchor: groupAnchor)
 
-              let verticalTrioSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.75), heightDimension: .fractionalWidth(0.75))
-              let leaderboardVerticalTrio = NSCollectionLayoutGroup.vertical(layoutSize: verticalTrioSize, subitem: leaderboardItem, count: 3)
+        leaderboardVerticalTrio.supplementaryItems = [groupDecoration]
 
-              let leaderboardSection = NSCollectionLayoutSection(group: leaderboardVerticalTrio)
-              leaderboardSection.interGroupSpacing = 20
-              leaderboardSection.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0)
+        let leaderboardSection = NSCollectionLayoutSection(group: leaderboardVerticalTrio)
 
-              leaderboardSection.orthogonalScrollingBehavior = .groupPagingCentered
-              leaderboardSection.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 0, bottom: 20, trailing: 0)
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(80))
+        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: SupplementaryView.leaderboardSectionHeader.viewKind, alignment: .top)
+        header.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 20, bottom: 0, trailing: 0)
 
-              return leaderboardSection
-            
-          case .followedUsers:
-              let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(100))
-              let followedUserItem = NSCollectionLayoutItem(layoutSize: itemSize)
+        let background = NSCollectionLayoutDecorationItem.background(elementKind: SupplementaryView.leaderboardBackground.viewKind)
 
-              let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(100))
-              let followedUserGroup = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: followedUserItem, count: 1)
+        leaderboardSection.boundarySupplementaryItems = [header]
+        leaderboardSection.decorationItems = [background]
 
-              let followedUserSection = NSCollectionLayoutSection(group: followedUserGroup)
+        ////
+        
+        leaderboardSection.interGroupSpacing = 20
+        leaderboardSection.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0)
+        
+        leaderboardSection.orthogonalScrollingBehavior = .groupPagingCentered
+        leaderboardSection.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 0, bottom: 20, trailing: 0)
+        
+        
+        
+        return leaderboardSection
+        
+      case .followedUsers:
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(100))
+        let followedUserItem = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(100))
+        let followedUserGroup = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: followedUserItem, count: 1)
+        
+        let followedUserSection = NSCollectionLayoutSection(group: followedUserGroup)
+        
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(60))
+        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: SupplementaryView.followedUsersSectionHeader.viewKind, alignment: .top)
 
-              return followedUserSection
-          }
+        followedUserSection.boundarySupplementaryItems = [header]
+        
+        return followedUserSection
       }
-
-      return layout
+    }
+    
+    return layout
   }
-
+  
+  func loggedHabitNames(for user: User) -> Set<String> {
+    var names = [String]()
+    
+    if let stats = model.userStatistics.first(where: { $0.user == user }) {
+      names = stats.habitCounts.map { $0.habit.name }
+    }
+    
+    return Set(names)
+  }
 }

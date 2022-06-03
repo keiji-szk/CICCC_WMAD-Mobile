@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		E51D81E6284899B7005A22B0 /* LoggedHabit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51D81E5284899B7005A22B0 /* LoggedHabit.swift */; };
 		E51D81E82848A3D0005A22B0 /* LeaderboardHabitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51D81E72848A3D0005A22B0 /* LeaderboardHabitCollectionViewCell.swift */; };
-		E51D81EA2848EF1F005A22B0 /* combinedStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51D81E92848EF1F005A22B0 /* combinedStats.swift */; };
+		E51D81EA2848EF1F005A22B0 /* CombinedStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51D81E92848EF1F005A22B0 /* CombinedStats.swift */; };
+		E571BB19284A93100088787A /* SupplementaryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E571BB18284A930F0088787A /* SupplementaryItem.swift */; };
 		E5F6861428466D54003426B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F6861328466D54003426B5 /* AppDelegate.swift */; };
 		E5F6861628466D54003426B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F6861528466D54003426B5 /* SceneDelegate.swift */; };
-		E5F6861828466D54003426B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F6861728466D54003426B5 /* ViewController.swift */; };
 		E5F6861B28466D54003426B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5F6861928466D54003426B5 /* Main.storyboard */; };
 		E5F6861D28466D57003426B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5F6861C28466D57003426B5 /* Assets.xcassets */; };
 		E5F6862028466D57003426B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5F6861E28466D57003426B5 /* LaunchScreen.storyboard */; };
@@ -41,11 +41,11 @@
 /* Begin PBXFileReference section */
 		E51D81E5284899B7005A22B0 /* LoggedHabit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedHabit.swift; sourceTree = "<group>"; };
 		E51D81E72848A3D0005A22B0 /* LeaderboardHabitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardHabitCollectionViewCell.swift; sourceTree = "<group>"; };
-		E51D81E92848EF1F005A22B0 /* combinedStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = combinedStats.swift; sourceTree = "<group>"; };
+		E51D81E92848EF1F005A22B0 /* CombinedStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedStats.swift; sourceTree = "<group>"; };
+		E571BB18284A930F0088787A /* SupplementaryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplementaryItem.swift; sourceTree = "<group>"; };
 		E5F6861028466D54003426B5 /* Habits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5F6861328466D54003426B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5F6861528466D54003426B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E5F6861728466D54003426B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E5F6861A28466D54003426B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E5F6861C28466D57003426B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5F6861F28466D57003426B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -83,6 +83,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E571BB14284A80AF0088787A /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				E5F68639284692A9003426B5 /* APIRequest.swift */,
+				E5F6863B284698B1003426B5 /* APIServise.swift */,
+				E5F686412846B8B2003426B5 /* UICollectionViewDiffableDataSource+ViewModel.swift */,
+				E571BB18284A930F0088787A /* SupplementaryItem.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		E571BB15284A80BA0088787A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E5F6863D28469ACA003426B5 /* PrimarySecondaryTextCollectionViewCell.swift */,
+				E5F686432846C7CC003426B5 /* NamedSectionHeaderView.swift */,
+				E51D81E72848A3D0005A22B0 /* LeaderboardHabitCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E571BB16284A80C60088787A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E5F6863328469052003426B5 /* Habit.swift */,
+				E5F6863528469092003426B5 /* Category.swift */,
+				E5F68637284690AD003426B5 /* Color.swift */,
+				E5F6863F2846B4D6003426B5 /* Settings.swift */,
+				E5F686452846CB8B003426B5 /* User.swift */,
+				E5F6864728481085003426B5 /* HabitStatistics.swift */,
+				E5F68649284810AD003426B5 /* UserCount.swift */,
+				E5F6864B28481E2C003426B5 /* UserStatistics.swift */,
+				E5F6864D28481E54003426B5 /* HabitCount.swift */,
+				E51D81E5284899B7005A22B0 /* LoggedHabit.swift */,
+				E51D81E92848EF1F005A22B0 /* CombinedStats.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E571BB17284A80CD0088787A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E5F686272846892B003426B5 /* HomeCollectionViewController.swift */,
+				E5F6862928468948003426B5 /* HabitCollectionViewController.swift */,
+				E5F6862B28468956003426B5 /* UserCollectionViewController.swift */,
+				E5F6862D28468969003426B5 /* LogHabitCollectionViewController.swift */,
+				E5F6862F28468B1A003426B5 /* HabitDetailViewController.swift */,
+				E5F6863128468B34003426B5 /* UserDetailViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		E5F6860728466D54003426B5 = {
 			isa = PBXGroup;
 			children = (
@@ -102,36 +154,16 @@
 		E5F6861228466D54003426B5 /* Habits */ = {
 			isa = PBXGroup;
 			children = (
+				E571BB14284A80AF0088787A /* Requests */,
+				E571BB15284A80BA0088787A /* Views */,
+				E571BB16284A80C60088787A /* Models */,
+				E571BB17284A80CD0088787A /* ViewControllers */,
 				E5F6861328466D54003426B5 /* AppDelegate.swift */,
 				E5F6861528466D54003426B5 /* SceneDelegate.swift */,
-				E5F6861728466D54003426B5 /* ViewController.swift */,
 				E5F6861928466D54003426B5 /* Main.storyboard */,
 				E5F6861C28466D57003426B5 /* Assets.xcassets */,
 				E5F6861E28466D57003426B5 /* LaunchScreen.storyboard */,
 				E5F6862128466D57003426B5 /* Info.plist */,
-				E5F686272846892B003426B5 /* HomeCollectionViewController.swift */,
-				E5F6862928468948003426B5 /* HabitCollectionViewController.swift */,
-				E5F6862B28468956003426B5 /* UserCollectionViewController.swift */,
-				E5F6862D28468969003426B5 /* LogHabitCollectionViewController.swift */,
-				E5F6862F28468B1A003426B5 /* HabitDetailViewController.swift */,
-				E5F6863128468B34003426B5 /* UserDetailViewController.swift */,
-				E5F6863328469052003426B5 /* Habit.swift */,
-				E5F6863528469092003426B5 /* Category.swift */,
-				E5F68637284690AD003426B5 /* Color.swift */,
-				E5F68639284692A9003426B5 /* APIRequest.swift */,
-				E5F6863B284698B1003426B5 /* APIServise.swift */,
-				E5F6863D28469ACA003426B5 /* PrimarySecondaryTextCollectionViewCell.swift */,
-				E5F6863F2846B4D6003426B5 /* Settings.swift */,
-				E5F686412846B8B2003426B5 /* UICollectionViewDiffableDataSource+ViewModel.swift */,
-				E5F686432846C7CC003426B5 /* NamedSectionHeaderView.swift */,
-				E5F686452846CB8B003426B5 /* User.swift */,
-				E5F6864728481085003426B5 /* HabitStatistics.swift */,
-				E5F68649284810AD003426B5 /* UserCount.swift */,
-				E5F6864B28481E2C003426B5 /* UserStatistics.swift */,
-				E5F6864D28481E54003426B5 /* HabitCount.swift */,
-				E51D81E5284899B7005A22B0 /* LoggedHabit.swift */,
-				E51D81E72848A3D0005A22B0 /* LeaderboardHabitCollectionViewCell.swift */,
-				E51D81E92848EF1F005A22B0 /* combinedStats.swift */,
 			);
 			path = Habits;
 			sourceTree = "<group>";
@@ -210,7 +242,6 @@
 				E51D81E82848A3D0005A22B0 /* LeaderboardHabitCollectionViewCell.swift in Sources */,
 				E5F6862E28468969003426B5 /* LogHabitCollectionViewController.swift in Sources */,
 				E5F6864A284810AD003426B5 /* UserCount.swift in Sources */,
-				E5F6861828466D54003426B5 /* ViewController.swift in Sources */,
 				E5F6863C284698B1003426B5 /* APIServise.swift in Sources */,
 				E5F6863A284692A9003426B5 /* APIRequest.swift in Sources */,
 				E5F6863228468B34003426B5 /* UserDetailViewController.swift in Sources */,
@@ -226,12 +257,13 @@
 				E5F686402846B4D6003426B5 /* Settings.swift in Sources */,
 				E5F6861428466D54003426B5 /* AppDelegate.swift in Sources */,
 				E5F686422846B8B2003426B5 /* UICollectionViewDiffableDataSource+ViewModel.swift in Sources */,
+				E571BB19284A93100088787A /* SupplementaryItem.swift in Sources */,
 				E5F6861628466D54003426B5 /* SceneDelegate.swift in Sources */,
 				E5F6863E28469ACA003426B5 /* PrimarySecondaryTextCollectionViewCell.swift in Sources */,
 				E5F6862C28468956003426B5 /* UserCollectionViewController.swift in Sources */,
 				E5F6863628469092003426B5 /* Category.swift in Sources */,
 				E51D81E6284899B7005A22B0 /* LoggedHabit.swift in Sources */,
-				E51D81EA2848EF1F005A22B0 /* combinedStats.swift in Sources */,
+				E51D81EA2848EF1F005A22B0 /* CombinedStats.swift in Sources */,
 				E5F686462846CB8B003426B5 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

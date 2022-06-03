@@ -26,6 +26,15 @@ class UserDetailViewController: UIViewController {
       case leading
       case category(_ category: Category)
       
+      var sectionColor: UIColor {
+          switch self {
+          case .leading:
+              return .systemGray4
+          case .category(let category):
+              return category.color.uiColor
+          }
+      }
+    
       static func < (lhs: Section, rhs: Section) -> Bool {
         switch (lhs, rhs) {
         case (.leading, .category), (.leading, .leading):
@@ -38,6 +47,7 @@ class UserDetailViewController: UIViewController {
       }
     }
     
+    
     typealias Item = HabitCount
   }
   
@@ -48,6 +58,8 @@ class UserDetailViewController: UIViewController {
   
   var dataSource: DataSourceType!
   var model = Model()
+  
+  
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -70,7 +82,8 @@ class UserDetailViewController: UIViewController {
         default: break
         }
     }
-    
+    view.backgroundColor = user.color?.uiColor ?? .white
+
     update()
   }
   
@@ -160,7 +173,7 @@ class UserDetailViewController: UIViewController {
       
       cell.primaryTextLabel.text = habitStat.habit.name
       cell.secondaryTextLabel.text = "\(habitStat.count)"
-      
+            
       return cell
     }
     
@@ -175,6 +188,8 @@ class UserDetailViewController: UIViewController {
       case .category(let category):
         header.nameLabel.text = category.name
       }
+      
+      header.backgroundColor = section.sectionColor
       
       return header
     }

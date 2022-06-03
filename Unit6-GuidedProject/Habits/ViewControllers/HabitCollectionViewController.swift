@@ -83,6 +83,8 @@ class HabitCollectionViewController: UICollectionViewController {
     }
   }
   
+
+  
   func updateCollectionView() {
     var itemsBySection = model.habitsByName.values.reduce(into: [ViewModel.Section: [ViewModel.Item]]()) { partial, habit in
       let section: ViewModel.Section
@@ -105,11 +107,16 @@ class HabitCollectionViewController: UICollectionViewController {
     dataSource.applySnapshotUsing(sectionIDs: sectionIDs, itemsBySection: itemsBySection)
   }
   
+  func configureCell(_ cell: PrimarySecondaryTextCollectionViewCell, withItem item: ViewModel.Item) {
+      cell.primaryTextLabel.text = item.habit.name
+  }
+
+  
   func createDataSource() -> DataSourceType {
     let dataSource = DataSourceType(collectionView: collectionView) { (collectionView, indexPath, item) in
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Habit", for: indexPath) as! PrimarySecondaryTextCollectionViewCell
       
-      cell.primaryTextLabel.text = item.habit.name
+      self.configureCell(cell, withItem: item)
       
       return cell
     }
